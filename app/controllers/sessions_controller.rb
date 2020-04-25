@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
   before_filter :authenticate_user, :only => [:home, :profile, :setting]
   before_filter :save_login_state, :only => [:login, :login_attempt]
+  
   def login
-    #Login Form
+    render 'login'
   end
   def login_attempt
     authorized_user = User.authenticate(params[:username_or_email],params[:login_password])
@@ -20,10 +21,10 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to :action => 'login'
   end
-  def home,
+  def home
   end
 
-  def profile,
+  def profile
   end
 
   def setting
