@@ -23,12 +23,15 @@ class SessionsController < ApplicationController
     redirect_to :action => 'login'
   end
   def home
+    render 'home'
   end
 
   def profile
+    render 'profile'
   end
 
   def setting
+    render 'setting'
   end
 
 end
