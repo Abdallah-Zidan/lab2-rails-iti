@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!  ,:only =>[:new , :create,:edit, :update,:destroy  ]
 
-  attr_accessor :user_id
+ 
   def index
     @articles=Article.all
   end
